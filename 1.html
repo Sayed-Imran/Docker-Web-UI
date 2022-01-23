@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+  <!-- MDB -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css" rel="stylesheet" />
+  <title>Docker Web UI</title>
+  <link rel="stylesheet" href="1.css">
+  <script rel="text/javascript" src="1.js"></script>
+</head>
+
+<body>
+  <div id="sectioned">
+    <div id="left-sec">
+      <div id="image">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><img src="/docker.png" alt="docker logo" class="img-fluid"></div>
+            <div class="flip-card-back"><img src="/docker1.png" alt="docker logo flip" class="img-fluid"></div>
+          </div>
+        </div>
+      </div>
+      <h4 id="cl">Container Launch</h4>
+      <div id="ip-nm" class="form-outline bg-primary form-white rounded">
+        <input type="text" id="name" class="form-control">
+        <label for="name" class="form-label">Name</label>
+      </div>
+      <div id="cl-act">
+        <div id="ip-img" class="dropdown">
+          <button class="btn btn-info dropdown-toggle" type="button" id="img-drop" data-mdb-toggle="dropdown"
+            aria-expanded="false">Image</button>
+          <ul class="dropdown-menu" alia-labelledby="dropdownMenuButton" id="img-dp">
+          </ul>
+        </div>
+      </div>
+
+      <div id="ip-cnt-start">
+        <div id="ip-cnt-start-dpdn" class="dropdown">
+          <button class="btn btn-info dropdown-toggle" type="button" id="cnt-start-drop" data-mdb-toggle="dropdown"
+            aria-expanded="false">Container Start</button>
+          <ul class="dropdown-menu" alia-labelledby="dropdownMenuButton" id="ctn-start-dn">
+          </ul>
+        </div>
+        <button id="ip-cnt-start-btn" class="btn btn-success" type="button" onclick="start_all()">Start All</button>
+      </div>
+      <div id="ip-cnt-stp">
+        <div id="ip-cnt-stp-dpdn" class="dropdown">
+          <button class="btn btn-info dropdown-toggle" type="button" id="cnt-stp-drop" data-mdb-toggle="dropdown"
+            aria-expanded="false">Container Stop</button>
+          <ul class="dropdown-menu" alia-labelledby="dropdownMenuButton" id="ctn-stp-dn">
+          </ul>
+        </div>
+        <button id="ip-cnt-stp-btn" class="btn btn-warning" type="button" onclick="stp_all()">Stop All</button>
+      </div>
+      <div id="ip-cnt-rmv">
+        <div id="ip-cnt-rmv-dpdn" class="dropdown">
+          <button class="btn btn-info dropdown-toggle" type="button" id="cnt-rmv-drop" data-mdb-toggle="dropdown"
+            aria-expanded="false">Container Remove</button>
+          <ul class="dropdown-menu" alia-labelledby="dropdownMenuButton" id="ctn-rmv-dn">
+          </ul>
+        </div>
+        <button id="ip-cnt-rmv-btn" class="btn btn-danger" type="button" onclick="rmv_all()">Remove All</button>
+      </div>
+      <div id="ip-img-pull">
+        <div id="ip-img-pull-txt" class="form-outline bg-dark form-white rounded">
+          <input type="text" id="ip-img-pull-txtfld" class="form-control">
+          <label for="ip-img-pull-txtfld" class="form-label">Image</label>
+        </div>
+        <button type="button" class="btn btn-warning" id="ip-img-pull-btn" onclick="img_pull()">Pull</button>
+      </div>
+      <div id="ip-img-del">
+        <div id="ip-img-del-txt" class="form-outline bg-dark form-white rounded">
+          <input type="text" id="ip-img-del-txtfld" class="form-control">
+          <label for="ip-img-del-txtfld" class="form-label">Image</label>
+        </div>
+        <button type="button" class="btn btn-danger" id="ip-img-del-btn" onclick="img_rmv()">Delete</button>
+      </div>
+    </div>
+    <div id="right-sec">
+      <div id="inactive">
+        <h3>Inactive Containers</h3>
+        <div id="ic-data" class="bg-danger text-white">
+        </div>
+      </div>
+      <div id="active">
+        <h3>Active Containers</h3>
+        <div id="ac-data" class="bg-success text-white">
+        </div>
+      </div>
+      <div id="ai">
+        <h3>Images</h3>
+        <div id="ai-data" class="text-white">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- MDB -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js"></script>
+</body>
+
+</html>
